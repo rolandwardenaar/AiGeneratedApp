@@ -22,10 +22,10 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore AiGeneratedApp.csproj
 
       - name: Build and publish Blazor WebAssembly app
-        run: dotnet publish -c Release -o release
+        run: dotnet publish AiGeneratedApp.csproj -c Release -o release
 
       - name: Update base-tag in index.html for GitHub Pages
         run: |
